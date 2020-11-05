@@ -4,12 +4,12 @@ append vars
 		page_title = 'Главная'
 block content
 	main
-		section.slider
-			.slider-cont
+		section.slider.posr
+			.slider-cont.posr
 				.slide.slide-1
 					.slide-bgc
 						+img('main-bgc-1.jpg')
-					.section
+					.section.posr
 						.slide-left
 							h2.slide-title Ремонт
 							span.slide-subtitle квартир под ключ по европейским стандартам
@@ -25,7 +25,45 @@ block content
 								include ../img/plus.svg
 								span Гарантия на работу 10 лет
 						span.slide-watermark NurAltynSapa.kz
-		section.projects
+				.slide.slide-2
+					.slide-bgc
+						+img('main-bgc-2.jpg')
+					.section.posr
+						.slide-left
+							h2.slide-title Евроремонт
+							span.slide-subtitle квартир под ключ по европейским стандартам
+							button.slide-btn.btn Заказать проект
+						ul.slide-right
+							li
+								include ../img/plus.svg
+								span Работаем по Казахстану с 1992 года
+							li
+								include ../img/plus.svg
+								span Сертифицированные специалисты
+							li
+								include ../img/plus.svg
+								span Гарантия на работу 10 лет
+						span.slide-watermark NurAltynSapa.kz
+				.slide.slide-3
+					.slide-bgc
+						+img('main-bgc-3.jpg')
+					.section.posr
+						.slide-left
+							h2.slide-title Кухни
+							span.slide-subtitle квартир под ключ по европейским стандартам
+							button.slide-btn.btn Заказать проект
+						ul.slide-right
+							li
+								include ../img/plus.svg
+								span Работаем по Казахстану с 1992 года
+							li
+								include ../img/plus.svg
+								span Сертифицированные специалисты
+							li
+								include ../img/plus.svg
+								span Гарантия на работу 10 лет
+						span.slide-watermark NurAltynSapa.kz
+		section.projects#projects
 			.section.posr
 				h2.block-title.projects-title Наши актуальные проекты
 				span.block-subtitle.projects-subtitle Наши проекты
@@ -50,8 +88,16 @@ block content
 						li.project
 							.project-slide-photo
 								+img('slide-1.jpg')
+							h6.project-slide-title Ремонт "Эконом"
+						li.project
+							.project-slide-photo
+								+img('slide-2.jpg')
 							h6.project-slide-title Ремонт "Стандарт"
-					.projects-control
+						li.project
+							.project-slide-photo
+								+img('slide-3.jpg')
+							h6.project-slide-title Ремонт "Премиум"
+					.projects-control#project-control
 						button.projects-control-btn.active
 						button.projects-control-btn
 						button.projects-control-btn
@@ -60,7 +106,7 @@ block content
 							include ../img/arrow-left.svg
 						button.projects-arrows-next
 							include ../img/arrow-right.svg
-		section.calc
+		section.calc#calc
 			.section.posr
 				h2.block-title.calc-title Форма расчета
 				span.block-subtitle.calc-subtitle Форма расчета
@@ -70,17 +116,17 @@ block content
 						.calc-inpt
 							span Тип ремонта
 							.calc-select-buttons
-								input(type='hidden')
-								button(data-value='economy')
+								input(type='hidden' value='standard')
+								button(data-value='economy' type='button')
 									include ../img/calc-arrow.svg
 									span Эконом
-								button(data-value='standard').active
+								button(data-value='standard' type='button').active
 									include ../img/calc-arrow.svg
 									span Стандарт
-								button(data-value='premium')
+								button(data-value='premium' type='button')
 									include ../img/calc-arrow.svg
 									span Премиум
-						button.calc-continue.btn Далее
+						a(href='#calc' type='button').calc-continue.btn Далее
 					.calc-page
 						.calc-col
 							.calc-inpt
@@ -105,7 +151,7 @@ block content
 						.calc-inpt
 							span Краткое описание
 							textarea(placeholder='Хочу не дорого, но богато')
-						button.calc-continue.btn Далее
+						a(href='#calc' type='button').calc-continue.btn Далее
 					.calc-page
 						.calc-col
 							.calc-inpt

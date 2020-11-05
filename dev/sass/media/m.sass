@@ -1,4 +1,6 @@
 $unit: 'px'
+html
+	scroll-behavior: smooth
 .section
 	+w($mobile#{$unit})
 	margin: auto
@@ -13,6 +15,7 @@ $unit: 'px'
 	left: 0
 	right: 0
 	z-index: 100000
+	transition: .35s ease
 	&.active
 		background-color: rgba($bgc_gray,.8)
 	&-row
@@ -90,7 +93,9 @@ $unit: 'px'
 
 
 .slider
-	position: relative
+	&-cont
+		+wh(100%,100vh)
+		background-color: $black
 	&-control
 		position: absolute
 		bottom: 20px
@@ -117,24 +122,28 @@ $unit: 'px'
 	+wh(100%,100vh)
 	+dfc
 	color: $white
-	position: relative
+	position: absolute
 	overflow: hidden
+	opacity: 0
+	visibility: hidden
+	transition: .5s ease
+	&.active
+		opacity: 1
+		visibility: visible
 	&-bgc
 		+wh(100%,110vh)
 		position: absolute
 		left: 0
 		right: 0
 		top: 0
+		opacity: .9
 		img
 			+wh(100%)
 			object-fit: cover
 			object-position: right
-	.section
-		position: relative
-		z-index: 10
 	&-title
 		font-family: $f_medium
-		font-size: 70px
+		font-size: 50px
 	&-btn
 		margin: 50px 0
 	&-right
@@ -198,6 +207,7 @@ $unit: 'px'
 		width: 100%
 		position: absolute
 		overflow: hidden
+		display: flex
 	&-arrows
 		+w(100%)
 		display: flex
@@ -230,7 +240,9 @@ $unit: 'px'
 
 
 .project
+	flex: 0 0 100%
 	height: 100%
+	position: relative
 	&-descprition
 		position: absolute
 		top: 0
@@ -271,15 +283,15 @@ $unit: 'px'
 	background-image: url(../../img/second-screen.jpg)
 	background-position: center
 	background-repeat: no-repeat
-	background-size: auto
+	background-size: auto 150%
 	&-form
 		+w(100%)
 		overflow: hidden
 		display: flex
-		padding-top: 20px
-		padding-bottom: 79px
+		padding: 50px 0
 	&-page
 		flex: 0 0 100%
+		transition: .35s ease
 	&-desc
 		padding: 10px 20px
 		border-radius: 8px
@@ -291,15 +303,22 @@ $unit: 'px'
 		padding: 20px 10px
 		border-radius: 8px
 		background-color: $white
+		margin-bottom: 20px
 		&>span
 			text-transform: uppercase
 			font-family: $f_bold
 			color: $green
 			font-size: 12px
+			display: block
+			margin-bottom: 10px
+		&>input,&>textarea
+			+w(100%)
+			padding: 7px 10px
+			border: 1px solid rgba($bgc_gray,.4)
+			border-radius: 5px
 	&-select
 		&-buttons
 			height: 150px
-			margin: 30px 0
 			display: flex
 			align-items: flex-start
 			justify-content: center
@@ -315,7 +334,6 @@ $unit: 'px'
 					svg
 						transform: scale(1)
 	&-continue
-		margin-top: 20px
 		margin-left: auto
 
 
