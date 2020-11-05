@@ -2,3 +2,320 @@ $unit: 'px'
 .section
 	+w($mobile#{$unit})
 	margin: auto
+	padding: 0 10px
+
+.head
+	+w(100%)
+	padding-top: 18px
+	padding-bottom: 18px
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 100000
+	&.active
+		background-color: rgba($bgc_gray,.8)
+	&-row
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&-logo,&-burger-btn
+		position: relative
+		z-index: 100
+	&-logo
+		display: flex
+		align-items: center
+		svg
+			height: auto
+		svg:first-child
+			+w(32px)
+			margin-right: 13.5px
+		svg:last-child
+			+w(156px)
+	&-burger
+		&-btn
+			+wh(30px)
+			flex: 0 0 30px
+			display: block
+			position: relative
+			&:after,&:before,span
+				+af
+				background-color: $green
+				height: 2px
+				border-radius: 1px
+				position: absolute
+				transition: .35s ease
+			&:before
+				+w(14px)
+				top: 8px
+				left: 11px
+			span
+				+w(20px)
+				top: 14px
+				left: 5px
+			&:after
+				+w(10px)
+				top: 20px
+				left: 15px
+			&.active
+				&:before,&:after
+					left: 5px
+		&-menu
+			height: 100vh
+			overflow: auto
+			padding-top: 81px
+			background-color: rgba($bgc_gray,0.95)
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			z-index: 99
+		&-link
+			transition: .2s ease
+			transform: translateX(100%)
+			&.active
+				transform: translateX(0)
+	&-contact,&-nav
+		display: flex
+		align-items: stretch
+		justify-content: flex-start
+		flex-direction: column
+	&-phone,&-whatsapp,&-link
+		height: calc((100vh - 81px) / 7)
+		padding-left: 30px
+		display: flex
+		align-items: center
+		color: $white
+		border-top: 1px solid $white
+
+
+.slider
+	position: relative
+	&-control
+		position: absolute
+		bottom: 20px
+		right: 0
+		left: 0
+		.section
+			display: flex
+			justify-content: center
+		&-btn
+			margin: 0 10px
+			padding: 2px
+			border: 1px solid transparent
+			border-radius: 100%
+			span
+				+wh(8px)
+				display: block
+				background-color: $white
+				border-radius: 100%
+			&.active
+				border-color: $yellow
+
+
+.slide
+	+wh(100%,100vh)
+	+dfc
+	color: $white
+	position: relative
+	overflow: hidden
+	&-bgc
+		+wh(100%,110vh)
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+		img
+			+wh(100%)
+			object-fit: cover
+			object-position: right
+	.section
+		position: relative
+		z-index: 10
+	&-title
+		font-family: $f_medium
+		font-size: 70px
+	&-btn
+		margin: 50px 0
+	&-right
+		li
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+	&-watermark
+		position: absolute
+		bottom: -50px
+		left: 20px
+
+
+.block
+	&-title
+		font-family: $f_bold
+		font-size: 12px
+		position: relative
+		z-index: 10
+	&-subtitle
+		font-family: $f_bold
+		color: rgba($bgc_gray,.05)
+		font-size: 43px
+		position: absolute
+		top: -20px
+		left: -10px
+		white-space: pre
+
+
+.btn
+	+wh(200px,50px)
+	+dfc
+	font-family: $f_bold
+	font-size: 12px
+	text-transform: uppercase
+	color: $white
+	background-color: $green
+	border-radius: 30px
+
+
+.posr
+	position: relative
+
+.projects
+	color: $white
+	background-color: rgba($bgc_gray,.96)
+	padding-top: 35px
+	&-subtitle
+		color: rgba($bgc_gray,.5)
+	&-descpritions
+		position: relative
+		margin-top: 50px
+	&-slider
+		height: 480px
+		margin-top: 30px
+		display: flex
+		align-items: center
+		position: relative
+	&-cont
+		height: 100%
+		width: 100%
+		position: absolute
+		overflow: hidden
+	&-arrows
+		+w(100%)
+		display: flex
+		justify-content: space-between
+		position: relative
+		z-index: 50
+	&-control
+		display: flex
+		justify-content: center
+		padding: 10px 0
+		background-color: rgba($bgc_gray,.5)
+		margin: 0 auto
+		position: absolute
+		bottom: 50px
+		left: 0
+		right: 0
+		&-btn
+			border: 1px solid transparent
+			padding: 2px
+			margin: 0 8px
+			&,&:before
+				border-radius: 100%
+			&:before
+				+af
+				+wh(8px)
+				display: block
+				background-color: $white
+			&.active
+				border-color: $yellow
+
+
+.project
+	height: 100%
+	&-descprition
+		position: absolute
+		top: 0
+		opacity: 0
+		transition: .35s ease
+		&.active
+			opacity: 1
+			position: relative
+		&-title
+			font-family: $f_bold
+			font-size: 18px
+			text-transform: uppercase
+		&-paragraph
+			margin-top: 10px
+			font-family: $ibm
+			font-size: 18px
+			span
+				display: block
+	&-slide
+		&-title
+			position: absolute
+			bottom: 20px
+			&:after
+				+af
+				+wh(70px,2px)
+				background-color: $yellow
+				position: absolute
+				bottom: -10px
+		&-photo
+			height: calc(100% - 50px)
+			img
+				height: 100%
+				object-fit: cover
+
+
+.calc
+	padding-top: 35px
+	background-image: url(../../img/second-screen.jpg)
+	background-position: center
+	background-repeat: no-repeat
+	background-size: auto
+	&-form
+		+w(100%)
+		overflow: hidden
+		display: flex
+		padding-top: 20px
+		padding-bottom: 79px
+	&-page
+		flex: 0 0 100%
+	&-desc
+		padding: 10px 20px
+		border-radius: 8px
+		background-color: $white
+		font-family: $ibm
+		line-height: 20px
+		margin-bottom: 20px
+	&-inpt
+		padding: 20px 10px
+		border-radius: 8px
+		background-color: $white
+		&>span
+			text-transform: uppercase
+			font-family: $f_bold
+			color: $green
+			font-size: 12px
+	&-select
+		&-buttons
+			height: 150px
+			margin: 30px 0
+			display: flex
+			align-items: flex-start
+			justify-content: center
+			flex-direction: column
+			overflow: hidden
+			button
+				text-transform: uppercase
+				margin: 15px 0
+				svg
+					transform: scale(.8)
+				&.active
+					font-family: $f_bold
+					svg
+						transform: scale(1)
+	&-continue
+		margin-top: 20px
+		margin-left: auto
+
+
