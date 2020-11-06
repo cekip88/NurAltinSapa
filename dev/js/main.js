@@ -73,36 +73,29 @@ class Page {
 	sliderPrepare(){
 		const _ = this;
 
-		let control = _.createEl('DIV','slider-control');
-		let section = _.createEl('DIV','section');
-		let slider = document.querySelector('.slider');
-		control.append(section);
-		slider.append(control);
+		let control = document.querySelector('.slider-control');
 
 		let slides = document.querySelectorAll('.slide');
 		slides.forEach(function (el,index) {
-			let button = _.createEl('BUTTON','slider-control-btn');
-			button.append(_.createEl('SPAN'));
+			let button = _.createEl('BUTTON','control-btn');
 			if (index === 0) {
 				button.classList.add('active');
 				el.classList.add('active');
 			}
-			section.append(button);
+			control.append(button);
 			button.addEventListener('click',function () {
 				_.swapSlide(index);
 			})
 		})
 	}
 	swapSlide(index){
-		const _ = this;
-
-		let btns = document.querySelectorAll('.slider-control-btn');
+		let btns = document.querySelectorAll('.slider .control-btn');
 		let slides = document.querySelectorAll('.slide');
 
 		btns.forEach(function (btn,int) {
 			if (btn.classList.contains('active')){
 				btn.classList.remove('active');
-				slides[int].classList.remove('active');
+				if (slides[int]) slides[int].classList.remove('active');
 			}
 		});
 		btns[index].classList.add('active');

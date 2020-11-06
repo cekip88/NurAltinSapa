@@ -63,7 +63,8 @@ block content
 								include ../img/plus.svg
 								span Гарантия на работу 10 лет
 						span.slide-watermark NurAltynSapa.kz
-		section.projects#projects
+			.control.slider-control
+		section.block.projects#projects
 			.section.posr
 				h2.block-title.projects-title Наши актуальные проекты
 				span.block-subtitle.projects-subtitle Наши проекты
@@ -97,16 +98,16 @@ block content
 							.project-slide-photo
 								+img('slide-3.jpg')
 							h6.project-slide-title Ремонт "Премиум"
-					.projects-control#project-control
-						button.projects-control-btn.active
-						button.projects-control-btn
-						button.projects-control-btn
+					.projects-control.control
+						button.control-btn.active
+						button.control-btn
+						button.control-btn
 					.projects-arrows
 						button.projects-arrows-prev
 							include ../img/arrow-left.svg
 						button.projects-arrows-next
 							include ../img/arrow-right.svg
-		section.calc#calc
+		section.block.calc#calc
 			.section.posr
 				h2.block-title.calc-title Форма расчета
 				span.block-subtitle.calc-subtitle Форма расчета
@@ -168,11 +169,92 @@ block content
 								span E-mail
 								input
 						button.calc-continue.btn Отправить
-
-
-
-
-
+		section.block.about#about
+			.section.posr
+				h2.block-title.about-title О компании
+				span.block-subtitle.about-subtitle О компании
+				.about-desc
+					.about-page.active
+						p Название «Нур Алтын Сапа», подчеркивает наш многолетний опыт и компетентность в строительстве и ремонте.
+						p Наша компания имеет все необходимые документы и допуск СРО — свидетельство о допуске к строительным или проектировочным работам, которое выдается в соответствии с действующими нормами и стандартами СРО (саморегулируемой организации).
+						p Специалистов компании ценят как экспертов в строительстве домов и часто приглашают выступать на семинарах и конференциях, берут интервью.
+					.about-page
+						p Название «Нур Алтын Сапа», подчеркивает наш многолетний опыт и компетентность в строительстве и ремонте.
+						p Наша компания имеет все необходимые документы и допуск СРО — свидетельство о допуске к строительным или проектировочным работам, которое выдается в соответствии с действующими нормами и стандартами СРО (саморегулируемой организации).
+						p Специалистов компании ценят как экспертов в строительстве домов и часто приглашают выступать на семинарах и конференциях, берут интервью.
+					.about-page
+						p Название «Нур Алтын Сапа», подчеркивает наш многолетний опыт и компетентность в строительстве и ремонте.
+						p Наша компания имеет все необходимые документы и допуск СРО — свидетельство о допуске к строительным или проектировочным работам, которое выдается в соответствии с действующими нормами и стандартами СРО (саморегулируемой организации).
+						p Специалистов компании ценят как экспертов в строительстве домов и часто приглашают выступать на семинарах и конференциях, берут интервью.
+					.control.about-control
+						button.control-btn.active
+						button.control-btn
+						button.control-btn
+				.about-name
+					include ../img/about-name.svg
+		section.spec.block#spec
+			.section.posr
+				h2.block-title.spec-title Специалисты
+				span.block-subtitle.spec-subtitle Специалисты
+				p.spec-desc Строительно-ремонтная компания #[strong “НУР АЛТЫН САПА”] является одним из признанных лидеров на строительном рынке центрального Казахстана. На сегодняшний день компания предлагает широкий спектр услуг, связанных со строительством загородных домов и ремонтной деятельностью. Специалисты компании осуществляют:
+				ul.spec-list
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Один
+						span.worker-position Руководитель
+						p.worker-desc Идейные соображения высшего порядка.
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Два
+						span.worker-position Заместитель
+						p.worker-desc Идейные соображения высшего порядка.
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Три
+						span.worker-position Плиточник, 20 лет стажа
+						p.worker-desc Идейные соображения высшего порядка.
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Четыре
+						span.worker-position Золотых дел мастер
+						p.worker-desc Идейные соображения высшего порядка.
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Пять
+						span.worker-position Плотник
+						p.worker-desc Идейные соображения высшего порядка.
+					li.worker
+						.worker-photo
+							+img('user.svg')
+						h6.worker-name Персона Шесть
+						span.worker-position Штукатур
+						p.worker-desc Идейные соображения высшего порядка.
+		section.block.partners
+			.section.posr
+				h2.block-title.partners-title Партнёры
+				span.block-subtitle.partners-subtitle Партнёры
+				ul.partners-list
+					li.partners-unit
+						+img('keramaMarazzi.png')
+					li.partners-unit
+						+img('Makita.png')
+					li.partners-unit
+						+img('grundfos.png')
+					li.partners-unit
+						+img('Knauf.png')
+					li.partners-unit
+						+img('12m.png')
+					li.partners-unit
+						+img('stroyMart.png')
+					li.partners-unit
+						+img('220volt.png')
+					li.partners-unit
+						+img('pufas.png')
 
 
 

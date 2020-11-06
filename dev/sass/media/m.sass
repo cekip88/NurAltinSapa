@@ -101,21 +101,6 @@ html
 		bottom: 20px
 		right: 0
 		left: 0
-		.section
-			display: flex
-			justify-content: center
-		&-btn
-			margin: 0 10px
-			padding: 2px
-			border: 1px solid transparent
-			border-radius: 100%
-			span
-				+wh(8px)
-				display: block
-				background-color: $white
-				border-radius: 100%
-			&.active
-				border-color: $yellow
 
 
 .slide
@@ -158,11 +143,16 @@ html
 
 
 .block
+	padding-top: 35px
+	background-position: center
+	background-repeat: no-repeat
+	background-size: auto 150%
 	&-title
 		font-family: $f_bold
 		font-size: 12px
 		position: relative
 		z-index: 10
+		padding-bottom: 50px
 	&-subtitle
 		font-family: $f_bold
 		color: rgba($bgc_gray,.05)
@@ -171,6 +161,24 @@ html
 		top: -20px
 		left: -10px
 		white-space: pre
+
+
+.control
+	display: flex
+	justify-content: center
+	&-btn
+		margin: 0 10px
+		padding: 2px
+		border: 1px solid transparent
+		border-radius: 100%
+		&:before
+			+af
+			+wh(8px)
+			display: block
+			background-color: $white
+			border-radius: 100%
+		&.active
+			border-color: $yellow
 
 
 .btn
@@ -190,12 +198,10 @@ html
 .projects
 	color: $white
 	background-color: rgba($bgc_gray,.96)
-	padding-top: 35px
 	&-subtitle
 		color: rgba($bgc_gray,.5)
 	&-descpritions
 		position: relative
-		margin-top: 50px
 	&-slider
 		height: 480px
 		margin-top: 30px
@@ -215,28 +221,12 @@ html
 		position: relative
 		z-index: 50
 	&-control
-		display: flex
-		justify-content: center
 		padding: 10px 0
 		background-color: rgba($bgc_gray,.5)
-		margin: 0 auto
 		position: absolute
 		bottom: 50px
 		left: 0
 		right: 0
-		&-btn
-			border: 1px solid transparent
-			padding: 2px
-			margin: 0 8px
-			&,&:before
-				border-radius: 100%
-			&:before
-				+af
-				+wh(8px)
-				display: block
-				background-color: $white
-			&.active
-				border-color: $yellow
 
 
 .project
@@ -279,16 +269,12 @@ html
 
 
 .calc
-	padding-top: 35px
 	background-image: url(../../img/second-screen.jpg)
-	background-position: center
-	background-repeat: no-repeat
-	background-size: auto 150%
 	&-form
 		+w(100%)
 		overflow: hidden
 		display: flex
-		padding: 50px 0
+		padding-bottom: 50px
 	&-page
 		flex: 0 0 100%
 		transition: .35s ease
@@ -337,3 +323,193 @@ html
 		margin-left: auto
 
 
+.about
+	background-image: url(../../img/third-screen.jpg)
+	background-position: left center
+	padding-bottom: 50px
+	&-title
+		color: $white
+	&-subtitle
+		color: rgba($bgc_gray,.3)
+	&-desc
+		+wh(100%,340px)
+		background-color: $white
+		border-radius: 8px
+		overflow: hidden
+	&-page
+		flex: 0 0 100%
+		padding: 20px 15px
+		position: absolute
+		opacity: 0
+		visibility: hidden
+		transition: .35s ease
+		&.active
+			opacity: 1
+			visibility: visible
+		p
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+	&-control
+		position: absolute
+		bottom: -30px
+		left: 0
+		right: 0
+	&-name
+		display: none
+
+
+.spec
+	background-image: url('../../img/forth-screen.jpg')
+	padding-bottom: 50px
+	&-desc
+		line-height: 18px
+		text-align: center
+		font-family: $ibm
+		strong
+			font-weight: 900
+	&-list
+		+w(100%)
+		padding-top: 80px
+		overflow: hidden
+		display: flex
+		align-items: flex-start
+
+
+.worker
+	flex: 0 0 100%
+	display: flex
+	flex-direction: column
+	align-items: center
+	font-size: 12px
+	font-family: $f_medium
+	&-photo
+		+wh(120px)
+		border-radius: 100%
+		margin-bottom: 24px
+		overflow: hidden
+		img
+			+wh(100%)
+			object-fit: cover
+			object-position: center
+	&-position
+		text-transform: uppercase
+		color: $green
+		font-size: 10px
+		margin-top: 12px
+		margin-bottom: 20px
+	&-desc
+		max-width: 151px
+		text-align: center
+		font-family: $ibm
+		font-weight: 600
+
+
+.partners
+	background-color: #E5E5E5
+	padding-bottom: 50px
+	&-list
+		background-color: $white
+		border: 6px solid $yellow
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: space-between
+	&-unit
+		flex: 0 0 50%
+
+
+.foot
+	background-color: $bgc_gray
+	color: $white
+	padding-bottom: 50px
+	&-subtitle
+		color: rgba(#47494A,.2)
+	&-cont
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+	&-block
+		flex: 0 0 100%
+	&-address
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		padding-bottom: 10px
+		&-link
+			display: flex
+			align-items: center
+			color: $white
+			text-decoration: underline
+			margin-top: 15px
+			svg
+				width: 23px
+				margin-right: 20px
+	&-logo
+		text-align: center
+		svg
+			&:first-child
+				margin-bottom: 15px
+	&-form
+		padding: 20px 15px
+		margin: 20px 0
+		border-radius: 8px
+		background-color: $white
+		color: $t_gray
+		font-family: $f_medium
+		&-title
+			text-transform: uppercase
+			text-align: center
+			margin-bottom: 20px
+		&-inpt
+			display: flex
+			flex-direction: column
+			margin-bottom: 10px
+			span
+				padding-bottom: 10px
+			input
+				+w(100%)
+				border: 1px solid rgba($bgc_gray,.3)
+				border-radius: 4px
+				padding: 5px 10px
+		&-immitation
+			+wh(16px)
+			flex: 0 0 16px
+			border-radius: 4px
+			border: 1px solid #ADB5BD
+			padding: 2px
+			margin-right: 10px
+			&:after
+				+af
+				+wh(100%)
+				background-color: $green
+				border-radius: 2px
+				transition: .35s ease
+				opacity: 0
+				visibility: hidden
+		&-label
+			display: flex
+			align-items: center
+		&-checkbox
+			display: none
+			&:checked+.foot-form-immitation:after
+				opacity: 1
+				visibility: visible
+		&-button
+			margin: 20px auto 0
+	&-rek
+		padding-top: 10px
+		&-unit
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+	&-signature
+		padding: 10px 0
+	strong
+		font-family: $f_bold
+	&-soc
+		a
+			margin-right: 10px
+			&:last-child
+				margin-right: 0
