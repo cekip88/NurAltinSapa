@@ -4,7 +4,7 @@ append vars
 		page_title = 'Главная'
 block content
 	main
-		section.slider.posr
+		section.slider.posr#slider
 			.slider-cont.posr
 				.slide.slide-1
 					.slide-bgc
@@ -13,7 +13,7 @@ block content
 						.slide-left
 							h2.slide-title Ремонт
 							span.slide-subtitle квартир под ключ по европейским стандартам
-							button.slide-btn.btn Заказать проект
+							a(href='#foot').slide-btn.btn Заказать проект
 						ul.slide-right
 							li
 								include ../img/plus.svg
@@ -68,45 +68,46 @@ block content
 			.section.posr
 				h2.block-title.projects-title Наши актуальные проекты
 				span.block-subtitle.projects-subtitle Наши проекты
-				ul.projects-descpritions
-					li.project-descprition.active
-						h5.project-descprition-title Ремонт "Эконом"
-						p.project-descprition-paragraph
-							span Краткое описание:
-							span Идейные соображения высшего порядка.
-					li.project-descprition
-						h5.project-descprition-title Загородный дом "Гнездо"
-						p.project-descprition-paragraph
-							span Слайд 2:
-							span Идейные соображения высшего порядка.
-					li.project-descprition
-						h5.project-descprition-title Ремонт "Стандарт"
-						p.project-descprition-paragraph
-							span Слайд 3:
-							span Идейные соображения высшего порядка.
-				.projects-slider
-					ul.projects-cont
-						li.project
-							.project-slide-photo
-								+img('slide-1.jpg')
-							h6.project-slide-title Ремонт "Эконом"
-						li.project
-							.project-slide-photo
-								+img('slide-2.jpg')
-							h6.project-slide-title Ремонт "Стандарт"
-						li.project
-							.project-slide-photo
-								+img('slide-3.jpg')
-							h6.project-slide-title Ремонт "Премиум"
-					.projects-control.control
-						button.control-btn.active
-						button.control-btn
-						button.control-btn
-					.projects-arrows
-						button.projects-arrows-prev
-							include ../img/arrow-left.svg
-						button.projects-arrows-next
-							include ../img/arrow-right.svg
+				.projects-container
+					ul.projects-descpritions
+						li.project-descprition.active
+							h5.project-descprition-title Ремонт "Эконом"
+							p.project-descprition-paragraph
+								span Краткое описание:
+								span Идейные соображения высшего порядка.
+						li.project-descprition
+							h5.project-descprition-title Загородный дом "Гнездо"
+							p.project-descprition-paragraph
+								span Слайд 2:
+								span Идейные соображения высшего порядка.
+						li.project-descprition
+							h5.project-descprition-title Ремонт "Стандарт"
+							p.project-descprition-paragraph
+								span Слайд 3:
+								span Идейные соображения высшего порядка.
+					.projects-slider
+						ul.projects-cont
+							li.project.active
+								.project-slide-photo
+									+img('slide-1.jpg')
+								h6.project-slide-title Ремонт "Эконом"
+							li.project
+								.project-slide-photo
+									+img('slide-2.jpg')
+								h6.project-slide-title Ремонт "Стандарт"
+							li.project
+								.project-slide-photo
+									+img('slide-3.jpg')
+								h6.project-slide-title Ремонт "Премиум"
+						.projects-control.control
+							button.control-btn.active
+							button.control-btn
+							button.control-btn
+						.projects-arrows
+							button.projects-arrows-prev
+								include ../img/arrow-left.svg
+							button.projects-arrows-next
+								include ../img/arrow-right.svg
 		section.block.calc#calc
 			.section.posr
 				h2.block-title.calc-title Форма расчета
@@ -234,7 +235,7 @@ block content
 						h6.worker-name Персона Шесть
 						span.worker-position Штукатур
 						p.worker-desc Идейные соображения высшего порядка.
-		section.block.partners
+		section.block.partners#partners
 			.section.posr
 				h2.block-title.partners-title Партнёры
 				span.block-subtitle.partners-subtitle Партнёры

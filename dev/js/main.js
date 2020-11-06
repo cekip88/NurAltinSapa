@@ -39,6 +39,7 @@ class Page {
 	}
 	burgerClick(){
 		const _ = this;
+		if (window.innerWidth >= 768) return;
 
 		let burgerBtn = document.querySelector('.head-burger-btn');
 		let headLinks = document.querySelectorAll('.head-burger-link');
@@ -103,15 +104,20 @@ class Page {
 	}
 
 	formContinue(){
-		const _ = this;
-
 		let btns = document.querySelectorAll('.calc-continue');
-		btns.forEach(function (el) {
+		let pages = document.querySelectorAll('.calc-page');
+		pages.forEach(function (page,int) {
+			if (int !== 0) page.style = 'height:0;'
+		});
+
+
+		btns.forEach(function (el,int) {
 			el.addEventListener('click',function (e) {
 				let btn = e.target;
 				if (btn.textContent === 'Далее'){
-					let page = btn.parentElement;
-					page.style = 'margin-left:-100%';
+					int++;
+					let page = pages[int];
+					page.style = 'margin-left:-100%;';
 				}
 			})
 		})
