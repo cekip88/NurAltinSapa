@@ -102,9 +102,8 @@ html
 		right: 0
 		left: 0
 
-
 .slide
-	+wh(100%,100vh)
+	+wh(100%)
 	+dfc
 	color: $white
 	position: absolute
@@ -200,7 +199,7 @@ html
 	background-color: rgba($bgc_gray,.96)
 	&-subtitle
 		color: rgba($bgc_gray,.5)
-	&-descpritions
+	&-descriptions
 		position: relative
 	&-slider
 		height: 480px
@@ -271,11 +270,13 @@ html
 	background-image: url(../../img/second-screen.jpg)
 	&-form
 		+w(100%)
-		overflow: hidden
-		display: flex
-		padding-bottom: 50px
+		position: relative
+		padding-bottom: 20px
 	&-page
-		flex: 0 0 100%
+		width: 100%
+		opacity: 0
+		visibility: hidden
+		position: absolute
 		transition: .35s ease
 	&-desc
 		padding: 10px 20px
@@ -331,14 +332,15 @@ html
 	&-subtitle
 		color: rgba($bgc_gray,.3)
 	&-desc
-		+wh(100%,340px)
+		+w(100%)
+		display: flex
 		background-color: $white
 		border-radius: 8px
 		overflow: hidden
+		font-family: $ibm
 	&-page
 		flex: 0 0 100%
 		padding: 20px 15px
-		position: absolute
 		opacity: 0
 		visibility: hidden
 		transition: .35s ease
@@ -434,7 +436,6 @@ html
 	&-address
 		display: flex
 		flex-direction: column
-		align-items: flex-start
 		padding-bottom: 10px
 		&-link
 			display: flex
@@ -446,7 +447,9 @@ html
 				width: 23px
 				margin-right: 20px
 	&-logo
-		text-align: center
+		display: flex
+		flex-direction: column
+		align-items: center
 		svg
 			&:first-child
 				margin-bottom: 15px
@@ -457,6 +460,7 @@ html
 		background-color: $white
 		color: $t_gray
 		font-family: $f_medium
+		font-size: 13px
 		&-title
 			text-transform: uppercase
 			text-align: center

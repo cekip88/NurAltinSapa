@@ -18,6 +18,7 @@ class Page {
 
 		_.init();
 		window.addEventListener('scroll',_.headScroll);
+		window.addEventListener('resize',_.projectsWidthAdaptive)
 	}
 
 	createEl(tag,cls = null,data){
@@ -105,19 +106,19 @@ class Page {
 
 	formContinue(){
 		let btns = document.querySelectorAll('.calc-continue');
-		let pages = document.querySelectorAll('.calc-page');
-		pages.forEach(function (page,int) {
-			if (int !== 0) page.style = 'height:0;'
-		});
-
+		let style = 'opacity:1;visibility:visible;position:relative';
+		let curPage = document.querySelector('.calc-page-first');
+		curPage.setAttribute('style',style);
 
 		btns.forEach(function (el,int) {
 			el.addEventListener('click',function (e) {
+				if (window.innerWidth > 767) e.preventDefault();
 				let btn = e.target;
-				if (btn.textContent === 'Далее'){
-					int++;
-					let page = pages[int];
-					page.style = 'margin-left:-100%;';
+				if (!btn.classList.contains('calc-submit')){
+					let page = btn.parentNode;
+					let next = page.nextElementSibling;
+					page.removeAttribute('style');
+					next.setAttribute('style',style);
 				}
 			})
 		})
@@ -138,6 +139,16 @@ class Page {
 		})
 	}
 
+	projectsWidthAdaptive(){
+		const _ = this;
+		if (window.innerWidth < 1170) return;
+		let slider = document.querySelector('.projects-slider');
+		let width = ((window.innerWidth - 1170) / 2) + 264;
+		width = window.innerWidth - width;
+		slider.setAttribute('style',`flex-basis:${width}px`)
+	}
+
+
 
 	init(){
 		const _ = this;
@@ -145,6 +156,7 @@ class Page {
 		_.sliderPrepare();
 		_.formContinue();
 		_.formTypeChoose();
+		_.projectsWidthAdaptive()
 	}
 }
 

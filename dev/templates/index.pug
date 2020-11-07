@@ -69,7 +69,7 @@ block content
 				h2.block-title.projects-title Наши актуальные проекты
 				span.block-subtitle.projects-subtitle Наши проекты
 				.projects-container
-					ul.projects-descpritions
+					ul.projects-descriptions
 						li.project-descprition.active
 							h5.project-descprition-title Ремонт "Эконом"
 							p.project-descprition-paragraph
@@ -99,6 +99,10 @@ block content
 								.project-slide-photo
 									+img('slide-3.jpg')
 								h6.project-slide-title Ремонт "Премиум"
+							li.project
+								.project-slide-photo
+									+img('slide-2.jpg')
+								h6.project-slide-title Ремонт "Стандарт"
 						.projects-control.control
 							button.control-btn.active
 							button.control-btn
@@ -113,7 +117,7 @@ block content
 				h2.block-title.calc-title Форма расчета
 				span.block-subtitle.calc-subtitle Форма расчета
 				form.calc-form
-					.calc-page
+					.calc-page.calc-page-first
 						p.calc-desc Чтобы рассчитать стоимость ремонта — выберите интересующие вас пункты, а в конце нажмите кнопку "Рассчитать стоимость", и получите готовый, но приблизительный расчет и подготовленного специалиста для выезда.
 						.calc-inpt
 							span Тип ремонта
@@ -128,7 +132,7 @@ block content
 								button(data-value='premium' type='button')
 									include ../img/calc-arrow.svg
 									span Премиум
-						a(href='#calc' type='button').calc-continue.btn Далее
+						a(href='#calc').calc-continue.btn Далее
 					.calc-page
 						.calc-col
 							.calc-inpt
@@ -153,7 +157,7 @@ block content
 						.calc-inpt
 							span Краткое описание
 							textarea(placeholder='Хочу не дорого, но богато')
-						a(href='#calc' type='button').calc-continue.btn Далее
+						a(href='#calc').calc-continue.btn Далее
 					.calc-page
 						.calc-col
 							.calc-inpt
@@ -169,14 +173,14 @@ block content
 							.calc-inpt
 								span E-mail
 								input
-						button.calc-continue.btn Отправить
+						button.calc-continue.btn.calc-submit Отправить
 		section.block.about#about
 			.section.posr
 				h2.block-title.about-title О компании
 				span.block-subtitle.about-subtitle О компании
 				.about-desc
 					.about-page.active
-						p Название «Нур Алтын Сапа», подчеркивает наш многолетний опыт и компетентность в строительстве и ремонте.
+						p Название «#[strong Нур Алтын Сапа]», подчеркивает наш многолетний опыт и компетентность в строительстве и ремонте.
 						p Наша компания имеет все необходимые документы и допуск СРО — свидетельство о допуске к строительным или проектировочным работам, которое выдается в соответствии с действующими нормами и стандартами СРО (саморегулируемой организации).
 						p Специалистов компании ценят как экспертов в строительстве домов и часто приглашают выступать на семинарах и конференциях, берут интервью.
 					.about-page

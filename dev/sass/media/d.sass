@@ -1,3 +1,125 @@
 $unit: 'px'
 .section
 	+w($desktop#{$unit})
+	padding: 0
+
+.head
+	&-logo
+		svg
+			&:last-child
+				width: 156px
+	&-burger
+		&-menu
+			width: 100%
+	&-nav
+		margin: 0 auto
+	&-link
+		margin-left: 40px
+		text-transform: uppercase
+		font-family: $f_light
+		position: relative
+		transition: .35s ease
+		&:after
+			+af
+			+wh(100%,1px)
+			position: absolute
+			bottom: -30px
+			transition: .35s ease
+		&:hover
+			color: $green
+			&:after
+				background-color: $yellow
+		&:first-child
+			margin-left: 0
+	&-contact
+		margin-left: 0
+
+
+.slider
+	&-cont
+		height: 760px
+	&-control
+		bottom: 50px
+.slide
+	&-right
+		flex-basis: 500px
+		li
+			flex-basis: 250px
+			margin-bottom: 50px
+			span
+				flex-basis: 170px
+	&-bgc
+		height: 100%
+	&-watermark
+		text-transform: uppercase
+		bottom: -210px
+
+
+.block
+	&-subtitle
+		font-size: 96px
+		top: -50px
+		left: -84px
+
+
+.projects
+	&-descriptions
+		margin-right: 70px
+	&-slider
+		flex-shrink: 0
+	&-control
+		width: 110px
+		padding: 22px 0
+	&-arrows
+		width: 886px
+
+.project
+	flex-basis: 330px
+	margin-right: 50px
+
+
+.calc
+	&-form
+		+dfc
+		width: calc(100% + 80px)
+		min-height: 630px
+		margin-left: -40px
+		padding: 0 40px 20px
+	&-page
+		+w(1170px)
+	&-inpt
+		display: flex
+		align-items: center
+		padding-right: 45px
+		box-shadow: 0 0 15px rgba($black,.3)
+		&>span
+			flex: 0 0 230px
+			margin-bottom: 0
+			margin-right: 30px
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding-left: 70px
+			&:after
+				+af
+				+wh(1,40px)
+				flex: 0 0 1px
+				background-color: $yellow
+		input
+			flex: 0 0 260px
+	&-select
+		&-buttons
+			button
+				width: 200px
+				margin: 45px 0
+				font-size: 24px
+
+
+.about
+	&-name
+		+wh(250px,50px)
+		+dfc
+		background-color: $white
+		border-radius: 4px
+		box-shadow: 0 0 16px rgba($black,.18)
+		position: absolute
