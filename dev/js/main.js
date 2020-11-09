@@ -189,6 +189,71 @@ class Page {
 		})
 	}
 
+	aboutSlider(){
+		const _ = this;
+		let slides = document.querySelectorAll('.about-page'),
+				buttons = document.querySelectorAll('.about-control button');
+		slides.forEach(function (page,int) {
+			page.setAttribute('style',`transform:translateX(${int * 100}%)`)
+		});
+
+		buttons.forEach(function (button,index) {
+			button.addEventListener('click',function (e) {
+				for (let i = 0; i < buttons.length; i++){
+					buttons[i].classList.remove('active');
+					slides[i].classList.remove('active');
+				}
+				button.classList.add('active');
+				slides.forEach(function (page,int) {
+					page.setAttribute('style',`transform:translateX(${(int - index) * 100}%)`)
+				})
+			})
+		})
+	}
+
+	specSwipe(){
+		let slides = document.querySelectorAll('.worker');
+		slides.forEach(function (slide,i) {
+			let startPos = 0;
+			slide.addEventListener('touchstart',function (e) {
+				startPos = e.changedTouches[0].clientX;
+			});
+			slide.addEventListener('touchmove',function (e) {
+				if (window.innerWidth < 768) slide.setAttribute('style',`transform:translateX(${e.changedTouches[0].clientX - startPos}px)`);
+			});
+			slide.addEventListener('touchend',function (e) {
+				if (e.changedTouches[0].clientX - startPos < -50 && i !== slides.length - 1) {
+					slides.forEach(function (el) {
+						let trans = el.getAttribute('data-style');
+						trans = trans.split('transform:translateX(')[1];
+						trans = trans.split('%)')[0] * 1;
+						trans = trans - 100;
+						el.setAttribute('style',`transform:translateX(${trans}%)`);
+						el.setAttribute('data-style',`transform:translateX(${trans}%)`);
+					})
+				} else if (e.changedTouches[0].clientX - startPos > 50 && i !== 0) {
+					slides.forEach(function (el) {
+						let trans = el.getAttribute('data-style');
+						trans = trans.split('transform:translateX(')[1];
+						trans = trans.split('%)')[0] * 1;
+						trans = trans + 100;
+						el.setAttribute('style',`transform:translateX(${trans}%)`);
+						el.setAttribute('data-style',`transform:translateX(${trans}%)`);
+					})
+				} else slide.setAttribute('style',slide.getAttribute('data-style'));
+			});
+		})
+	}
+	specStart(){
+		let slides = document.querySelectorAll('.worker');
+		slides.forEach(function (slide,index) {
+			let style = `transform:translateX(${index * 100}%)`;
+			slide.setAttribute('style',style);
+			slide.setAttribute('data-style',style);
+		})
+	}
+
+
 	init(){
 		const _ = this;
 		_.headScroll();
@@ -199,6 +264,9 @@ class Page {
 		_.getBlocksPosition();
 		_.headLinkActive();
 		_.headLinkHandler();
+		_.aboutSlider();
+		_.specStart();
+		_.specSwipe();
 	}
 }
 

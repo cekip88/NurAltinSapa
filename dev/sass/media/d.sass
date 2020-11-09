@@ -2,11 +2,8 @@ $unit: 'px'
 
 .btn
 	transition: .35s ease
-	border: 1px solid transparent
-
 	&:hover
 		background-color: $darkgreen
-		border-color: $green
 
 .section
 	+w($desktop#{$unit})
@@ -163,7 +160,7 @@ $unit: 'px'
 		font-size: 14px
 
 .worker
-	flex-basis: calc(100% / 6)
+	width: calc(100% / 6)
 	&-photo
 		+wh(91px)
 		margin-bottom: 40px
