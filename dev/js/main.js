@@ -4,6 +4,8 @@ class Page {
 		_.body = document.querySelector('body');
 		_.header = _.body.querySelector('header');
 		_.burgerCondition = false;
+		_.positions = {};
+		_.currentBlock = '';
 
 		document.querySelector('.head-burger-btn').addEventListener('click',function () {
 			_.burgerClick();
@@ -17,7 +19,10 @@ class Page {
 		});
 
 		_.init();
-		window.addEventListener('scroll',_.headScroll);
+		window.addEventListener('scroll',function () {
+			_.headScroll();
+			_.headLinkActive();
+		});
 		window.addEventListener('resize',_.projectsWidthAdaptive)
 	}
 
@@ -148,7 +153,41 @@ class Page {
 		slider.setAttribute('style',`flex-basis:${width}px`)
 	}
 
+	getBlocksPosition(){
+		const _ = this;
 
+		let blocks = ['#projects','#calc','#about','#partners','#foot'];
+		blocks.forEach(function (id) {
+			let block = document.querySelector(id);
+			let position = block.offsetTop;
+			_.positions[id] = position;
+		});
+	}
+	headLinkActive(){
+		const _ = this;
+		let links = document.querySelectorAll('.head-link');
+		let block = '';
+		for (let position in _.positions){
+			if (window.pageYOffset >= _.positions[position] - 300) block = position;
+		}
+		if (_.currentBlock !== block) {
+			_.currentBlock = block;
+			links.forEach(function (link) {
+				link.classList.remove('active');
+				if (link.getAttribute('href') === _.currentBlock) link.classList.add('active')
+			})
+		}
+	}
+	headLinkHandler(){
+		const _ = this;
+		let links = document.querySelectorAll('.head-link');
+		links.forEach(function (link) {
+			link.addEventListener('click',function (e) {
+				e.preventDefault();
+				window.scrollTo(0,_.positions[link.getAttribute('href')] - 150);
+			})
+		})
+	}
 
 	init(){
 		const _ = this;
@@ -156,7 +195,10 @@ class Page {
 		_.sliderPrepare();
 		_.formContinue();
 		_.formTypeChoose();
-		_.projectsWidthAdaptive()
+		_.projectsWidthAdaptive();
+		_.getBlocksPosition();
+		_.headLinkActive();
+		_.headLinkHandler();
 	}
 }
 

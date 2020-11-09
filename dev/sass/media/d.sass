@@ -1,4 +1,13 @@
 $unit: 'px'
+
+.btn
+	transition: .35s ease
+	border: 1px solid transparent
+
+	&:hover
+		background-color: $darkgreen
+		border-color: $green
+
 .section
 	+w($desktop#{$unit})
 	padding: 0
@@ -25,7 +34,7 @@ $unit: 'px'
 			position: absolute
 			bottom: -30px
 			transition: .35s ease
-		&:hover
+		&:hover,&.active
 			color: $green
 			&:after
 				background-color: $yellow
@@ -116,10 +125,73 @@ $unit: 'px'
 
 
 .about
+	padding-bottom: 125px
+	background-position: 85% center
+	&-desc
+		+wh(330px,430px)
+		margin: 50px 0 0 126px
+		box-shadow: 0 0 16px rgba($black,.2)
+	&-page
+		padding: 22px 22px 8px 28px
+		font-size: 14px
+		p
+			margin-bottom: 20px
+			&:last-child
+				margin-bottom: 0
 	&-name
 		+wh(250px,50px)
 		+dfc
 		background-color: $white
 		border-radius: 4px
-		box-shadow: 0 0 16px rgba($black,.18)
+		box-shadow: 0 0 16px rgba($black,.2)
 		position: absolute
+		bottom: -30px
+		left: 55px
+	&-control
+		+w(330px)
+		left: 126px
+		right: initial
+		bottom: -70px
+
+
+.spec
+	padding-bottom: 100px
+	&-desc
+		+w(666px)
+		margin: 0 auto
+		padding: 50px 0 0
+		font-size: 14px
+
+.worker
+	flex-basis: calc(100% / 6)
+	&-photo
+		+wh(91px)
+		margin-bottom: 40px
+
+
+.partners
+	padding-bottom: 100px
+	&-list
+		padding: 20px 0
+
+
+.foot
+	&-cont
+		padding: 0 30px
+	&-block
+		flex-basis: 450px
+		&:last-child
+			padding-top: 0
+			margin-top: 50px
+	&-form
+		padding: 37px 28px
+		margin: 0
+		&-title
+			margin-bottom: 33px
+		&-inpt
+			margin-bottom: 16px
+			input
+				padding: 10px
+	&-rek
+		padding: 0
+		margin: 70px 0 0
