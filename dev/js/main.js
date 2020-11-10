@@ -263,8 +263,21 @@ class Page {
 		let slider = document.querySelector('.projects-cont');
 		let slides = slider.children;
 		let length = slides.length;
-		if (window.innerWidth >= 768){
+		if (window.innerWidth >= 768 && window.innerWidth < 1921){
 			if (length < 5){
+				for (let i = 0; i < length; i++){
+					slider.append(slides[i].cloneNode(true))
+				}
+			}
+		} else if (window.innerWidth > 1920){
+			if (length < 4){
+				for (let j = 0; j < 2; j++){
+					for (let i = 0; i < length; i++){
+						slider.append(slides[i].cloneNode(true))
+						console.log('test')
+					}
+				}
+			} else {
 				for (let i = 0; i < length; i++){
 					slider.append(slides[i].cloneNode(true))
 				}
