@@ -70,7 +70,22 @@ block content
 				span.block-subtitle.projects-subtitle Наши проекты
 				.projects-container
 					ul.projects-descriptions
-						li.project-descprition.active
+						li.project-descprition
+							h5.project-descprition-title Ремонт "Эконом"
+							p.project-descprition-paragraph
+								span Краткое описание:
+								span Идейные соображения высшего порядка.
+						li.project-descprition
+							h5.project-descprition-title Загородный дом "Гнездо"
+							p.project-descprition-paragraph
+								span Слайд 2:
+								span Идейные соображения высшего порядка.
+						li.project-descprition
+							h5.project-descprition-title Ремонт "Стандарт"
+							p.project-descprition-paragraph
+								span Слайд 3:
+								span Идейные соображения высшего порядка.
+						li.project-descprition
 							h5.project-descprition-title Ремонт "Эконом"
 							p.project-descprition-paragraph
 								span Краткое описание:
@@ -87,26 +102,31 @@ block content
 								span Идейные соображения высшего порядка.
 					.projects-slider
 						ul.projects-cont
-							li.project.active
+							li.project
 								.project-slide-photo
 									+img('slide-1.jpg')
 								h6.project-slide-title Ремонт "Эконом"
 							li.project
 								.project-slide-photo
 									+img('slide-2.jpg')
-								h6.project-slide-title Ремонт "Стандарт"
+								h6.project-slide-title Загородный дом "Гнездо"
 							li.project
 								.project-slide-photo
 									+img('slide-3.jpg')
-								h6.project-slide-title Ремонт "Премиум"
+								h6.project-slide-title Ремонт "Стандарт"
+							li.project
+								.project-slide-photo
+									+img('slide-1.jpg')
+								h6.project-slide-title Ремонт "Эконом"
 							li.project
 								.project-slide-photo
 									+img('slide-2.jpg')
+								h6.project-slide-title Загородный дом "Гнездо"
+							li.project
+								.project-slide-photo
+									+img('slide-3.jpg')
 								h6.project-slide-title Ремонт "Стандарт"
 						.projects-control.control
-							button.control-btn.active
-							button.control-btn
-							button.control-btn
 						.projects-arrows
 							button.projects-arrows-prev
 								include ../img/arrow-left.svg
