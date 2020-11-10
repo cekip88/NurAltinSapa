@@ -342,20 +342,23 @@ class Page {
 		}
 		let difference = curBtnNumber - activeBtnNumber;
 		let time = 100;
+		if (window.innerWidth > 767) time = 200;
 		if(difference > 0) {
+			_.projectNextSlide();
 			let interval = setInterval(function () {
 				_.projectNextSlide()
 			},time);
 			setTimeout(function () {
 				clearInterval(interval)
-			},time * difference);
+			},time * (difference - 1));
 		} else if (difference < 0){
+			_.projectPrevSlide();
 			let interval = setInterval(function () {
 				_.projectPrevSlide()
 			},time);
 			setTimeout(function () {
 				clearInterval(interval)
-			},time * difference * -1);
+			},time * ((difference * -1) - 1));
 		}
 	}
 
