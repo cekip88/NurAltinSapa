@@ -17,15 +17,15 @@ footer.block.foot#foot
 				h5.foot-form-title Обратная связь
 				.foot-form-inpt
 					span Ф.И.О. или Организация
-					input
+					input.foot-form-name
 				.foot-form-inpt
 					span Контактный телефон
-					input
+					input.foot-form-phone.phone
 				label.foot-form-label
 					input(type='checkbox').foot-form-checkbox
 					.foot-form-immitation
 					span Даю согласие на сбор и обработку персональных данных.
-				button.btn.foot-form-button Отправить
+				button.btn.foot-form-button.inactive Отправить
 			.foot-block.foot-rek
 				.foot-rek-unit
 					strong ИИК:&nbsp;
@@ -63,5 +63,6 @@ footer.block.foot#foot
 
 
 
-
+	+inc('js','js/front.js')(type = 'module')
+	+inc('js','js/imask.js')
 	+inc('js','js/main.js',true)

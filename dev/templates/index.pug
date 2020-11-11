@@ -13,7 +13,7 @@ block content
 						.slide-left
 							h2.slide-title Ремонт
 							span.slide-subtitle квартир под ключ по европейским стандартам
-							a(href='#foot').slide-btn.btn Заказать проект
+							button.slide-btn.btn Заказать проект
 						ul.slide-right
 							li
 								include ../img/plus.svg
@@ -130,17 +130,17 @@ block content
 						.calc-col
 							.calc-inpt
 								span Укажите площадь
-								input(placeholder='Площадь ремонта М2')
+								input(placeholder='Площадь ремонта М2').square
 							.calc-inpt
 								span Высота потолков
-								input(placeholder='М')
+								input(placeholder='М').height
 							.calc-inpt
 								span Вид помещения
 								input(placeholder='Новостройка или офис')
 						.calc-col
 							.calc-inpt
 								span Демонтаж
-								input(placeholder='100%')
+								input(placeholder='100%').demo
 							.calc-inpt
 								span Стены
 								input(placeholder='Обои под покраску')
